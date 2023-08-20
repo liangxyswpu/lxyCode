@@ -58,7 +58,7 @@ class Server():
                 yuxianzhi[i, j] = yuxianzhi[j, i] = cosine_distance(clients_model_grads_flatten_list[i],
                                                                     clients_model_grads_flatten_list[j])
 
-        median_updates = np.median(np.array(clients_model_grads_flatten_list), 0)
+        median_updates = get_median_index(np.array(clients_model_grads_flatten_list))
         median_updates_erfanshu = np.linalg.norm(median_updates)
         non_malicous_update_list = []
         non_malicous_update_index = []
