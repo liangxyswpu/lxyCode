@@ -311,3 +311,9 @@ def cos(array1, array2):
 
 def relu(x):
     return (abs(x) + x) / 2
+
+def get_median_index(data):
+    two_norm_list = np.linalg.norm(data, ord=2, axis=1)
+    temp_median = np.median(two_norm_list)
+    temp_index = np.where(two_norm_list == temp_median)[0]
+    return data[temp_index]
