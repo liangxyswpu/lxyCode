@@ -150,7 +150,7 @@ def get_datas(data_name):
         X_train = ((X_train - mean) / std).reshape(-1, 28, 28, 1)
         X_test = ((X_test - mean) / std).reshape(-1, 28, 28, 1)
     elif data_name == 'FMNIST':
-        (X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
+        (X_train, y_train), (X_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
         X_train = X_train / 255
         X_test = X_test / 255
         mean = 0.286
